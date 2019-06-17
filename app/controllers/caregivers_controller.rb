@@ -36,7 +36,7 @@ class CaregiversController < ApplicationController
   private
 
   def find_caregiver
-    Caregiver.find_by[params[:id]]
+    Caregiver.find(params[:id])
   end
 
   def caregiver_params

@@ -4,8 +4,9 @@ class CreateNotifications < ActiveRecord::Migration[5.2]
       t.string :subject
       t.string :message
       t.integer :student_id
-      t.integer :sender_id
-      t.integer :receiver_id
+      t.integer :educator_id
+      t.integer :caregiver_id
+      t.boolean :from_educator
 
       t.timestamps
     end

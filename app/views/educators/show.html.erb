@@ -1,0 +1,12 @@
+<h1><%= @educator.full_name %></h1>
+
+<h2>My Details</h2>
+
+<h3>Phone Number: <%= @educator.phone %></h3>
+<h3>Email Address: <%= @educator.email %></h3>
+
+
+<h2>My Kids</h2>
+<% @educator.students.each do |student| %>
+<h3><%= link_to student.first_name, student_path(student) %> </h3>
+<% end %>

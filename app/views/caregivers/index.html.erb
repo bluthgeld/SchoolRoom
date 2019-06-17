@@ -1,0 +1,6 @@
+<h1>Caregivers</h1>
+
+<% @caregivers.each do |caregiver| %>
+
+<h2> <%= link_to caregiver.full_name, caregiver_path(caregiver) %> </h2>
+<% end %>

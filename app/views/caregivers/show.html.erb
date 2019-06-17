@@ -1,0 +1,15 @@
+<h1><%= @caregiver.full_name %></h1>
+
+<h2>My Kids</h2>
+<% @caregiver.students.each do |student| %>
+<h3><%= link_to student.first_name, student_path(student) %> </h3>
+<% end %>
+
+<h2>My Details</h2>
+
+<h3>Phone Number: <%= @caregiver.phone_number %></h3>
+<h3>Email Address: <%= @caregiver.email %></h3>
+<h3>Communication Preference: <%= @caregiver.contact_preference.capitalize %></h3>
+
+<h2>Related Caregivers</h2>
+  
