@@ -4,7 +4,9 @@ class Educator < ApplicationRecord
   has_many :students, through: :educator_students
   has_many :notifications
   has_many :caregivers, through: :notifications
+  belongs_to :user
 
+  accepts_nested_attributes_for :user
 
   def full_name
 

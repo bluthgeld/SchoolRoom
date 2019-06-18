@@ -6,6 +6,7 @@ class CreateCaregivers < ActiveRecord::Migration[5.2]
       t.string :phone_number
       t.string :email
       t.string :contact_preference
+      t.integer :user_id
 
       t.timestamps
     end

@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :caregivers, :foreign_key => 'caregiver_id'
-  has_many :educators, :foreign_key => 'educator_id'
-  
+  has_many :caregivers
+  has_many :educators
+  has_secure_password
 
 end

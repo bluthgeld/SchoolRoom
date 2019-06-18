@@ -5,6 +5,7 @@ class CreateEducators < ActiveRecord::Migration[5.2]
       t.string :last_name
       t.string :email
       t.string :phone
+      t.integer :user_id
 
       t.timestamps
     end

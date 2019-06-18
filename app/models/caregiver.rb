@@ -3,6 +3,8 @@ class Caregiver < ApplicationRecord
   has_many :students, through: :care_students
   has_many :notifications
   has_many :educators, through: :notifications
+  belongs_to :user
+  accepts_nested_attributes_for :user
 
 
   def full_name

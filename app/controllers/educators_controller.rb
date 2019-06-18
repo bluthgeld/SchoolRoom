@@ -19,9 +19,13 @@ class EducatorsController < ApplicationController
   end
 
   def create
-    @educator = Educator.create(educator_params)
+
+    #First create the User with the proper params
+    @user = User.create(username: params["educator"]["users"]["username"], password: params["educator"]["users"]["password"])
+    #Educator - same thing, only for user_id: @user.id
+    @educator = Educator.create(first_name: params["educator"]["first_name"], last_name: params["educator"]["last_name"], email: params["educator"]["email"], phone: params["educator"]["phone"], user_id: @user.id)
     @educator.save
-    redirect_to educator_path(@educator)
+    redirect_to @educator
   end
 
   def edit
@@ -31,7 +35,7 @@ class EducatorsController < ApplicationController
   def update
     @educator = find_educator
     @educator.update(find_educator)
-    redirect_to educator_path(@educator)
+    redirect_to @educator
   end
 
   def destroy
@@ -47,7 +51,7 @@ class EducatorsController < ApplicationController
   end
 
   def educator_params
-    params.require(:educator).permit(:first_name, :last_name, :phone, :email)
+    params.require(:educator).permit(:first_name, :last_name, :phone, :email, user_attributes: [:username, :password])
   end
 
 
