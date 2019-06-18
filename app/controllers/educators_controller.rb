@@ -7,7 +7,9 @@ class EducatorsController < ApplicationController
   end
 
   def show
-
+    cookies["home_page"] = "home page"
+    cookies["last_student"] = @educator.students.name
+    session[""] = 
     @educator = Educator.find(params[:id])
 
   end

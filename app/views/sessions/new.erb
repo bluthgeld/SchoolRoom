@@ -1,0 +1,15 @@
+<h1>Login</h1>
+
+<h2>Hello are you a Caregiver or an Educator?</h2>
+
+
+<% if flash.notice %>
+  <div>
+    <%= flash.notice%>
+  </div>
+
+<%= form_tag '/login' do %>
+  <%=label :username, "Username"%>
+  <%=text_field_tag :username%>
+  <%= submit_tag "Login"%>
+  <%end%>

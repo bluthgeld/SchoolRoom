@@ -10,6 +10,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%if session["user_id"]%>
+    <div> Welcome User <%=session["user_id"]%></div>
+    <%else%>
+    <%= link_to "Login", login_path%>
+    <%end%>
+
+    <%=yield%>
   </body>
 </html>

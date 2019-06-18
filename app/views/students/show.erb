@@ -1,7 +1,8 @@
 <h1><%= @student.full_name %></h1>
 
 <h2>Student Caregivers</h2>
-
+<h3>Here is your <%=cookie["home_page"]</h3>
+<h3>The last student you visited was <%=cookies["last_student"]</h3>
 <% @student.caregivers.each do |caregiver| %>
 <h3><%= link_to caregiver.full_name, caregiver_path(caregiver) %> </h3>
 <% end %>
