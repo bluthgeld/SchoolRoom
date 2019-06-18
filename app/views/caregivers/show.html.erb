@@ -11,5 +11,10 @@
 <h3>Email Address: <%= @caregiver.email %></h3>
 <h3>Communication Preference: <%= @caregiver.contact_preference.capitalize %></h3>
 
+<h2>Notifications</h2>
+<%@caregiver.student_notifications.each do |message|%>
+<div>
+  <%=message.message%>
+</div>
+<%end%>
 <h2>Related Caregivers</h2>
-  

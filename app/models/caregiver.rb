@@ -11,4 +11,15 @@ class Caregiver < ApplicationRecord
 
   end
 
+
+  def student_notifications
+    Notification.all.select do |notification|
+      notification.student_id = self.students.ids
+  end
+end
+
+
+
+
+
 end

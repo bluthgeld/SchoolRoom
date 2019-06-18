@@ -10,3 +10,9 @@
 <% @educator.students.each do |student| %>
 <h3><%= link_to student.first_name, student_path(student) %> </h3>
 <% end %>
+
+<h2>My Notifications</h2>
+
+<%@educator.specific_notification_from_educator.each do |message|%>
+<h3><%= message.message %></h3>
+<%end%>

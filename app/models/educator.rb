@@ -12,4 +12,16 @@ class Educator < ApplicationRecord
 
   end
 
+  def notifications_from_educators
+    Notification.all.select do |notification|
+      notification.from_educator == true
+    end
+  end
+
+  def specific_notification_from_educator
+    notifications_from_educators.select do |notification|
+      notification.educator_id == self.id
+    end
+  end
+
 end
