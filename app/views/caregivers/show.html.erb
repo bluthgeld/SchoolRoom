@@ -14,7 +14,7 @@
 <h2>Notifications</h2>
 <%@caregiver.student_notifications.each do |message|%>
 <div>
-  <%=message.message%>
+  <%= link_to message.message, notification_path(message)%>
 </div>
 <%end%>
 <h2>Related Caregivers</h2>

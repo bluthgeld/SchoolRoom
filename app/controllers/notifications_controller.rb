@@ -3,7 +3,7 @@ class NotificationsController < ApplicationController
   def index
 
     @notifications = Notification.all
-  
+
   end
 
   def show
@@ -43,7 +43,7 @@ class NotificationsController < ApplicationController
 private
 
   def notification_params
-    params.require(:notification).permit(:subject, :message, :student_id, :educator_id, :caregiver_id, :from_educator)
+    params.require(:notification).permit(:subject, :message, :student_id, :educator_id, :from_educator)
   end
 
 end

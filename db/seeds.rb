@@ -32,8 +32,4 @@ educatorstudent4 = EducatorStudent.find_or_create_by(student_id: student4.id, ed
 educatorstudent5 = EducatorStudent.find_or_create_by(student_id: student5.id, educator_id: educator3.id)
 educatorstudent6 = EducatorStudent.find_or_create_by(student_id: student6.id, educator_id: educator3.id)
 
-
-notification1 = Notification.find_or_create_by(subject: "Help", message: "Rob keeps beating up the kids", student_id: student1.id, educator_id: educator1.id, caregiver_id: caregiver1.id, from_educator: true)
-notification2 = Notification.find_or_create_by(subject: "Help", message: "Rob keeps beating up the kids", student_id: student1.id, educator_id: educator1.id, caregiver_id: caregiver2.id, from_educator: true)
-notification3 = Notification.find_or_create_by(subject: "Hello", message: "This is a test", student_id: student5.id, educator_id: educator1.id, caregiver_id: caregiver6.id, from_educator: true)
-notification4 = Notification.find_or_create_by(subject: "Please Bring Snacks", message: "You are scheduled to bring snacks on Friday", student_id: student3.id, educator_id: educator1.id, caregiver_id: caregiver4.id, from_educator: true)
+notification1 = Notification.find_or_create_by(subject: "test", message: "test", student_id: student1.id, educator_id: educator2.id, from_educator: true)

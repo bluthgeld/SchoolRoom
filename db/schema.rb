@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 2019_06_18_132221) do
     t.string "message"
     t.integer "student_id"
     t.integer "educator_id"
-    t.integer "caregiver_id"
     t.boolean "from_educator"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

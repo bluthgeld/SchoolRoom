@@ -6,13 +6,39 @@
 <h3>Email Address: <%= @educator.email %></h3>
 
 
-<h2>My Kids</h2>
-<% @educator.students.each do |student| %>
-<h3><%= link_to student.first_name, student_path(student) %> </h3>
+<h2>My Students</h2>
+<table width="60%">
+  <tr>
+    <th>No.</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Start Date</th>
+  </tr>
+<% @educator.students.each_with_index do |student, i| %>
+  <tr>
+    <td><%= i + 1 %></td>
+    <td><%= link_to student.full_name, student_path(student) %></td>
+    <td><%= student.age %></td>
+    <td><%= student.start_date %></td>
+  </tr>
 <% end %>
+</table>
 
 <h2>My Notifications</h2>
 
-<%@educator.specific_notification_from_educator.each do |message|%>
-<h3><%= message.message %></h3>
+<table width="60%">
+  <tr>
+    <th>No.</th>
+    <th>Date Sent</th>
+    <th>Subject</th>
+    <th>Caregiver</th>
+  </tr>
+  <%@educator.specific_notification_from_educator.each_with_index do |message, i|%>
+  <tr>
+    <td><%= i + 1 %></td>
+    <td><%= message.created_at %></td>
+    <td><%= link_to message.subject, notification_path(message) %></td>
+    <td><%= message.caregiver.full_name %></td>
+  </tr>
 <%end%>
+</table>
