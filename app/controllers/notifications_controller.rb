@@ -26,12 +26,15 @@ class NotificationsController < ApplicationController
   end
 
   def edit
+    @notification = Notification.find(params[:id])
+  end
 
+  def update
     @notification = Notification.find(params[:id])
     @notification.update(notification_params)
     redirect_to notification_path(@notification)
-
   end
+
 
   def delete
 
