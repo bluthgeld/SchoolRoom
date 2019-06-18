@@ -10,6 +10,6 @@ class SessionsController < ApplicationController
       redirect_to @user_path
     else
       flash.notice = "User not found"
-      render :new 
+      render :new
   end
 end
