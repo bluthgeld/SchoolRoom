@@ -1,6 +1,8 @@
 class Caregiver < ApplicationRecord
   has_many :care_students
   has_many :students, through: :care_students
+  has_many :notifications
+  has_many :educators, through: :notifications
 
 
   def full_name
