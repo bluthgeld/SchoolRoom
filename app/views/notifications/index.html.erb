@@ -1,0 +1,19 @@
+<h1>All Notifications</h1>
+<table width="90%">
+  <tr>
+    <th>No.</th>
+    <th>Subject</th>
+    <th>Sender</th>
+    <th>Recipient</th>
+    <th>Date Sent</th>
+  </tr>
+  <% @notifications.each_with_index do |notification, i| %>
+  <tr>
+    <td><%= i + 1 %></td>
+    <td><%= link_to notification.subject, notification_path(notification) %></td>
+    <td><%= notification.educator.full_name %></td>
+    <td><%= notification.caregiver.full_name %></td>
+    <td><%= notification.created_at %></td>
+  </tr>
+  <% end %>
+</table>

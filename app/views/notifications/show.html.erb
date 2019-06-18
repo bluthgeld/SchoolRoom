@@ -1,0 +1,15 @@
+<h1>Subject: <%= @notification.subject %></h1>
+
+<h2>Educator: <%= @notification.educator.full_name %></h2>
+
+<h2>Caregiver: <%= @notification.caregiver.full_name %></h2>
+
+<h2>Concerning Student <%= @notification.student.full_name %></h2>
+
+<h2>Message:</h2>
+<p><%= @notification.message %><p>
+
+<% @notification.from_educator %>
+
+
+<h3><%= link_to "Respond To This Notification", new_notification_path %> | <%= link_to "Edit this Notification", edit_notification_path(@notification) %></h3>
