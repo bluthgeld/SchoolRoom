@@ -5,4 +5,11 @@ class ApplicationRecord < ActiveRecord::Base
     self.students != []
   end
 
+
+  def my_kids
+    Student.all.select do |kid|
+      kid.educators.ids == self.educators.ids
+    end
+  end
+
 end

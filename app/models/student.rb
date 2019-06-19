@@ -3,7 +3,7 @@ class Student < ApplicationRecord
   has_many :educators, through: :educator_students
   has_many :care_students
   has_many :caregivers, through: :care_students
-  has_many :students
+
 
 
   def full_name

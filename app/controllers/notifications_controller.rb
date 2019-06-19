@@ -14,6 +14,7 @@ class NotificationsController < ApplicationController
 
   def new
     #update to include if there are params, use them, else @notification = Notification.new
+      @user = get_user
       @notification = Notification.new
   end
 

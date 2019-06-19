@@ -24,15 +24,12 @@
 <% end %>
 </table>
 
-<h2>Create a Caregiver Notication</h2>
 
-<% if @educator.exists %>
-  <%= link_to "Create a Notification", new_notification_path %>
+<div>My Notifications | </div><div><% if @educator.exists %>
+  <%= link_to "Create a New Notification", new_notification_path %>
 <% else %>
   <%= "You Must Have Students to Create Notifications" %>
-  <% end %>
-
-<h2>My Notifications</h2>
+  <% end %></div>
 
 <table width="60%">
   <tr>
