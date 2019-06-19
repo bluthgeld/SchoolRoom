@@ -10,10 +10,12 @@
   </head>
 
   <body>
-    <%if session["user_id"]%>
-    <div> Welcome User <%=session["user_id"]%></div>
+    <%if get_user%>
+    <div> Welcome <%=get_user.username.titleize%></div>
+    <%= link_to "Logout", "/logout", method: "DELETE" %>
     <%else%>
     <%= link_to "Login", login_path%>
+
     <%end%>
 
     <%=yield%>

@@ -6,11 +6,16 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:username])
 
     if @user && @user.authenticate(params[:password])
-      sesion[:user_id] = @user.id
-      redirect_to @user_path
+      session[:user_id] = @user.id
+      redirect_to @user.find_redirect
     else
       flash.notice = "Username/Password not found"
       render :new
     end
+  end
+
+  def destroy
+    session.clear
+    redirect_to login_path
   end
 end

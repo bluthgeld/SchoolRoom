@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_18_132221) do
+ActiveRecord::Schema.define(version: 2019_06_18_115541) do
 
   create_table "care_students", force: :cascade do |t|
     t.integer "student_id"
@@ -53,14 +53,6 @@ ActiveRecord::Schema.define(version: 2019_06_18_132221) do
     t.integer "student_id"
     t.integer "educator_id"
     t.boolean "from_educator"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "roles", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "educator_id"
-    t.integer "caregiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
