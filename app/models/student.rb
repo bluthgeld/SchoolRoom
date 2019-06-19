@@ -4,7 +4,10 @@ class Student < ApplicationRecord
   has_many :care_students
   has_many :caregivers, through: :care_students
 
-
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :age, presence: true, uniqueness: true
+  validates :start_date, presence: true
 
   def full_name
 

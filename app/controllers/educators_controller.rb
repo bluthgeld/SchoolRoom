@@ -1,9 +1,10 @@
 class EducatorsController < ApplicationController
 
+  before_action :authorized, except: :new
+  # , only: [:show, :index]
+
   def index
-
     @educators = Educator.all
-
   end
 
   def show
@@ -34,7 +35,9 @@ class EducatorsController < ApplicationController
 
   def update
     @educator = find_educator
-    @educator.update(find_educator)
+    @educator.update(educator_params)
+    @user = get_user
+    @user.update(username: params["educator"]["users"]["username"], password: params["educator"]["users"]["password"])
     redirect_to @educator
   end
 

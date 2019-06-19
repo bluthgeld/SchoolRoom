@@ -1,4 +1,5 @@
 class CaregiversController < ApplicationController
+  before_action :authorized, except: :new
   def index
     @caregivers = Caregiver.all
   end

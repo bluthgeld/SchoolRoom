@@ -8,6 +8,12 @@ class Educator < ApplicationRecord
 
   accepts_nested_attributes_for :user
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :phone, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+
+
   def full_name
 
       self.first_name + " " + self.last_name

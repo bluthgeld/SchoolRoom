@@ -1,4 +1,5 @@
 class NotificationsController < ApplicationController
+  before_action :authorized
 
   def index
 
@@ -20,7 +21,7 @@ class NotificationsController < ApplicationController
 
   def create
     @user = get_user
-    @notification = Notification.create(subject: params["notification"]["subject"], message: params["notification"]["message"], student_id: params["notification"]["student_id"], educator_id: @user.id, from_educator: params["notification"]["from_educator"])
+    @notification = Notification.create(subject: params["notification"]["subject"], message: params["notification"]["message"], student_id: params["notification"]["student_id"], educator_id: @user.id)
     @notification.save
     redirect_to notification_path(@notification)
   end
@@ -45,7 +46,7 @@ class NotificationsController < ApplicationController
 private
 
   def notification_params
-    params.require(:notification).permit(:subject, :message, :student_id, :educator_id, :from_educator)
+    params.require(:notification).permit(:subject, :message, :student_id, :educator_id)
   end
 
 end

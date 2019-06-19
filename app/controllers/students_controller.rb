@@ -30,7 +30,7 @@ class StudentsController < ApplicationController
   def destroy
     @student = find_student
     @student.destroy
-    redirect_to students_path 
+    redirect_to caregivers_path 
   end
 
   private

@@ -2,6 +2,12 @@ class Notification < ApplicationRecord
   belongs_to :educator
   belongs_to :student
 
+  validates :subject, presence: true
+  validates :message, presence: true
+  validates :student_id, presence: true
+  validates :educator_id, presence: true
+
+
   # def educator_sender_id
   #   ne = Educator.find(self.educator_id)
   #   # Educator.all.each do |educator|

@@ -10,3 +10,5 @@
 
 <h3>Here is your <%=cookies["home_page"]%></h3>
 <h3>The last student you visited was <%=cookies["last_student"]%></h3>
+
+<%= link_to "Delete Student", student_path, method: "delete" %>

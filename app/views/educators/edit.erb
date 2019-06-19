@@ -1,12 +1,13 @@
-<%= form_for @caregiver do |f|%>
+<div>
+<%= form_for @educator do |f|%>
 <%= f.label :first_name %>
 <%= f.text_field :first_name%>
 <%= f.label :last_name %>
 <%= f.text_field :last_name %>
-<%= f.label :phone_number %>
-<%= f.text_field :phone_number%></div>
 <%= f.label :email %>
 <%= f.text_field :email %>
-<%= f.label :contact_preference %>
-<%= f.submit %></div>
+<%= f.label :phone %>
+<%= f.text_field :phone%>
+<%= f.submit %>
 <%end%>
+</div>
