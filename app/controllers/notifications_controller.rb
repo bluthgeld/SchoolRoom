@@ -18,11 +18,10 @@ class NotificationsController < ApplicationController
   end
 
   def create
-
-    @notification = Notification.new(notification_params)
+    @user = get_user
+    @notification = Notification.create(subject: params["notification"]["subject"], message: params["notification"]["message"], student_id: params["notification"]["student_id"], educator_id: @user.id, from_educator: params["notification"]["from_educator"])
     @notification.save
     redirect_to notification_path(@notification)
-
   end
 
   def edit
@@ -36,8 +35,10 @@ class NotificationsController < ApplicationController
   end
 
 
-  def delete
-
+  def destroy
+    @notification = Notification.find(params[:id])
+    @notification.destroy
+    redirect_to notifications_path
   end
 
 private

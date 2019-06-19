@@ -24,6 +24,14 @@
 <% end %>
 </table>
 
+<h2>Create a Caregiver Notication</h2>
+
+<% if @educator.exists %>
+  <%= link_to "Create a Notification", new_notification_path %>
+<% else %>
+  <%= "You Must Have Students to Create Notifications" %>
+  <% end %>
+
 <h2>My Notifications</h2>
 
 <table width="60%">
@@ -31,14 +39,12 @@
     <th>No.</th>
     <th>Date Sent</th>
     <th>Subject</th>
-    <th>Caregiver</th>
   </tr>
   <%@educator.specific_notification_from_educator.each_with_index do |message, i|%>
   <tr>
     <td><%= i + 1 %></td>
     <td><%= message.created_at %></td>
     <td><%= link_to message.subject, notification_path(message) %></td>
-    <td><%= message.caregiver.full_name %></td>
   </tr>
 <%end%>
 </table>

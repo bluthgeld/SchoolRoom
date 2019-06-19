@@ -1,4 +1,8 @@
 class SessionsController < ApplicationController
+
+  def index
+  end
+
   def new
   end
 
@@ -18,4 +22,7 @@ class SessionsController < ApplicationController
     session.clear
     redirect_to login_path
   end
+
+  # Create a method to return logged in user
+  
 end

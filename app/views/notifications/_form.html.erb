@@ -1,5 +1,4 @@
 <%= form_for @notification do |n| %>
-<h2><%= n.label "Educator Name: " %> <%=n.collection_select(:educator_id, Educator.all, :id, :full_name, prompt: true)%></h2>
 <h2><%= n.label "Student Name: " %> <%=n.collection_select(:student_id, Student.all, :id, :full_name, prompt: true)%></h2>
 <h2><%= n.label "Subject" %> <%=n.text_field :subject %></h2>
 <h2><%= n.label "Message"%> <%=n.text_area :message, cols: 35, rows: 5 %></h2>

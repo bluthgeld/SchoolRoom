@@ -10,4 +10,8 @@
 <% @notification.from_educator %>
 
 
-<h3><%= link_to "Respond To This Notification", new_notification_path %> | <%= link_to "Edit this Notification", edit_notification_path(@notification) %></h3>
+<h3><%= link_to "Edit this Notification", edit_notification_path(@notification) %></h3>
+
+<%= form_tag @notification, method: "DELETE" do %>
+<%= submit_tag "Delete" %>
+  <% end %>
