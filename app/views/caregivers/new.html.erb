@@ -1,0 +1,26 @@
+<h2>Create Username and Password</h2>
+
+<div>
+<%= form_for @caregiver do |f|%>
+<%= f.label :first_name %>
+<%= f.text_field :first_name%>
+<%= f.label :last_name %>
+<%= f.text_field :last_name %>
+<%= f.label :phone_number %>
+<%= f.text_field :phone_number%></div>
+<%= f.label :email %>
+<%= f.text_field :email %>
+<%= f.label :contact_preference %>
+<%= f.text_field :contact_preference %>
+
+
+<div>
+<%= f.fields_for :users do |u|%>
+<%= u.label :username %>
+<%= u.text_field :username%>
+<%= u.label :password%>
+<%= u.password_field :password%>
+
+<%end%>
+<%= f.submit %></div>
+<%end%>
