@@ -21,7 +21,7 @@ class NotificationsController < ApplicationController
 
   def create
     @user = get_user
-    @notification = Notification.create(subject: params["notification"]["subject"], message: params["notification"]["message"], student_id: params["notification"]["student_id"], educator_id: @user.id)
+    @notification = Notification.create(subject: params["notification"]["subject"], message: params["notification"]["message"], student_id: params["notification"]["student_id"], educator_id: params["notification"]["educator_id"])
     @notification.save
     redirect_to notification_path(@notification)
   end

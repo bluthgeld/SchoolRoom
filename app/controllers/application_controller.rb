@@ -23,7 +23,16 @@ class ApplicationController < ActionController::Base
       !!get_user
   end
 
+
+    # Caregiver.find_by(user_id: session[:user_id])
+
+def something
+  redirect_to login_path unless session[:user_id] == @user.id
+
+end
   def authorized
+
+#&& get_user.id == Caregiver.find_by(user_id: get_user.id)
        redirect_to login_path unless logged_in?
       # if logged_in?
       #   redirect_to educators_path(user)

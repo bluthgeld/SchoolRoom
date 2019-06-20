@@ -6,6 +6,11 @@ class CaregiversController < ApplicationController
 
   def show
     @caregiver = find_caregiver
+    # Caregiver.find(session[:user_id])
+    # @user = User.find(params[:id])
+    # if ! params[:id] == session[:user_id]
+    #   redirect_to @caregiver
+    # end
   end
 
   def new

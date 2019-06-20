@@ -1,4 +1,8 @@
-
+Student.destroy_all
+User.destroy_all
+Caregiver.destroy_all
+Educator.destroy_all
+Notification.destroy_all
 student1 = Student.find_or_create_by(first_name: "Rob", last_name: "Pedersen", age: 44, start_date: "August 1, 2019")
 student2 = Student.find_or_create_by(first_name: "Sean", last_name: "Carter", age: 4, start_date: "August 1, 2019")
 student3 = Student.find_or_create_by(first_name: "Gian", last_name: "Libunao", age: 28, start_date: "August 1, 2019")

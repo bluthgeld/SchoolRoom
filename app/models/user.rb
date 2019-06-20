@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :caregivers
-  has_many :educators
+  has_one :caregiver
+  has_one :educator
   has_secure_password
 
 

@@ -1,6 +1,6 @@
 class EducatorsController < ApplicationController
 
-  before_action :authorized, except: :new
+  before_action :authorized
   # , only: [:show, :index]
 
   def index
@@ -12,6 +12,12 @@ class EducatorsController < ApplicationController
     # cookies["last_student"] = @educator.students.name
     # session[""] =
     @educator = Educator.find(params[:id])
+
+    if @educator.user.id == get_user.id
+      render :show
+    else
+      redirect_to login_path
+    end
 
   end
 

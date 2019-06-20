@@ -6,9 +6,10 @@ class ApplicationRecord < ActiveRecord::Base
   end
 
 
-  def my_kids
-    Student.all.select do |kid|
-      kid.educators.ids == self.educators.ids
+
+  def get_all_students
+    self.educator.students.collect do |student|
+      student
     end
   end
 
