@@ -1,0 +1,7 @@
+<%= form_for @educator do |e| %>
+<h2><%= e.label "First Name: " %> <%=n.collection_select(:educator_id, Educator.all, :id, :full_name, prompt: true)%></h2>
+<h2><%= e.label "Last Name: " %> <%=n.collection_select(:student_id, Student.all, :id, :full_name, prompt: true)%></h2>
+<h2><%= e.label "Phone" %> <%=n.text_field :phone %></h2>
+<h2><%= e.label "Email"%> <%=n.text_field :email %></h2>
+<p><%= n.submit %></p>
+<% end %>
