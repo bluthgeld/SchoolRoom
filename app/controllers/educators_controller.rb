@@ -8,9 +8,7 @@ class EducatorsController < ApplicationController
   end
 
   def show
-    # cookies["home_page"] = "home page"
-    # cookies["last_student"] = @educator.students.name
-    # session[""] =
+
     @educator = Educator.find(params[:id])
 
     if @educator.user.id == get_user.id
@@ -26,10 +24,7 @@ class EducatorsController < ApplicationController
   end
 
   def create
-
-    #First create the User with the proper params
     @user = User.create(username: params["educator"]["users"]["username"], password: params["educator"]["users"]["password"])
-    #Educator - same thing, only for user_id: @user.id
     @educator = Educator.create(first_name: params["educator"]["first_name"], last_name: params["educator"]["last_name"], email: params["educator"]["email"], phone: params["educator"]["phone"], user_id: @user.id)
     @educator.save
     redirect_to @educator
