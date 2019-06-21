@@ -1,13 +1,63 @@
-<h1>Subject: <%= @notification.subject %></h1>
+<div class="notification_show">
 
-<h2>Educator: <%= @notification.educator.full_name %></h2>
 
-<h2>Concerning Student <%= @notification.student.full_name %></h2>
+<div class="wrapper">
+  <div class="box_l">
+    From Educator:
+  </div>
 
-<h2>Message:</h2>
-<p><%= @notification.message %><p>
+  <div class="box_r">
+    <%= @notification.educator.full_name %>
+  </div>
+</div>
 
-<% @notification.from_educator %>
+<div class="wrapper">
+  <div class="box_l">
+    Regarding Student:
+  </div>
+
+  <div class="box_r">
+    <%= @notification.student.full_name %>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="box_l">
+    Date Sent:
+  </div>
+
+  <div class="box_r">
+    <%= @notification.created_at %>
+  </div>
+</div>
+
+
+
+<div class="wrapper">
+  <div class="box_l">
+    Subject:
+  </div>
+
+  <div class="box_r">
+    <%= @notification.subject %>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="box_l">
+    Message:
+  </div>
+
+  <div class="box_r">
+    <%= @notification.message %>
+  </div>
+</div>
+
+
+
+</div>
+
+
 
 
 <h3><%= link_to "Edit this Notification", edit_notification_path(@notification) %></h3>

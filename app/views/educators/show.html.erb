@@ -2,27 +2,62 @@
 
 <h2>My Details</h2>
 
-<h3>Phone Number: <%= @educator.phone %></h3>
-<h3>Email Address: <%= @educator.email %></h3>
+<div class="wrapper">
+  <div class="box_l">
+    Phone Number:
+  </div>
+  <div class="box_r">
+    <%= @educator.phone %>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="box_l">
+    Email Address:
+  </div>
+  <div class="box_r">
+    <%= @educator.email %>
+  </div>
+</div>
 
 
 <h2>My Students</h2>
-<table class="view_table">
-  <tr>
-    <th>No.</th>
-    <th>Name</th>
-    <th>Age</th>
-    <th>Start Date</th>
-  </tr>
+
+<div class="wrapper_ed">
+  <div class="box_ed_head_s">
+    No.
+  </div>
+
+  <div class="box_ed_head_l">
+    Name
+  </div>
+  <div class="box_ed_head_s">
+    Age.
+  </div>
+
+  <div class="box_ed_head_l">
+    Start Date
+  </div>
+</div>
+
 <% @educator.students.each_with_index do |student, i| %>
-  <tr>
-    <td><%= i + 1 %></td>
-    <td><%= link_to student.full_name, student_path(student) %></td>
-    <td><%= student.age %></td>
-    <td><%= student.start_date %></td>
-  </tr>
+<div class="wrapper_ed">
+  <div class="box_ed_td_s">
+    <%= i + 1 %>
+  </div>
+
+  <div class="box_ed_td_l">
+    <%= link_to student.full_name, student_path(student) %>
+  </div>
+  <div class="box_ed_td_s">
+    <%= student.age %>
+  </div>
+
+  <div class="box_ed_td_l">
+    <%= student.start_date %>
+  </div>
+</div>
 <% end %>
-</table>
+
 
 <div class="notification">My Notifications | <% if @educator.exists %>
   <%= link_to "Create a New Notification", new_notification_path %>
@@ -31,22 +66,35 @@
   <% end %>
 </div>
 
-<table class="view_table">
-  <tr>
-    <th>No.</th>
-    <th>Subject</th>
-    <th>Date Sent</th>
 
-  </tr>
-  <%@educator.specific_notification_from_educator.each_with_index do |message, i|%>
-  <tr>
-    <td><%= i + 1 %></td>
-    <td><%= link_to message.subject, notification_path(message) %></td>
-    <td><%= message.created_at %></td>
-  </tr>
+<div class="wrapper_ed">
+  <div class="box_ed_head_s">
+    No.
+  </div>
+  <div class="box_ed_head_l">
+    Subject
+  </div>
+  <div class="box_ed_head_l">
+    Date Sent
+  </div>
+</div>
+
+<%@educator.specific_notification_from_educator.each_with_index do |message, i|%>
+
+<div class="wrapper_ed">
+  <div class="box_ed_td_s">
+    <%= i + 1 %>
+  </div>
+  <div class="box_ed_td_l">
+    <%= link_to message.subject, notification_path(message) %>
+  </div>
+  <div class="box_ed_td_l">
+    <%= message.created_at %>
+  </div>
+</div>
+
 <%end%>
-</table>
 
 
 
-<h2><%=link_to "Edit Your Profile", edit_educator_path(@educator)%></h2>
+<h3><%=link_to "Edit Your Profile", edit_educator_path(@educator)%></h3>

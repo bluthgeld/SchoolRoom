@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+a {
+  color: #6d7993;
+}
+
 .notification {
   width: 800px;
   font-size: 24px;
@@ -9,4 +13,41 @@
   padding-bottom: 25px;
   font-weight: bold;
   color: #6d7993;
+}
+
+.wrapper_ed {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 800px;
+}
+
+.wrapper_ed .box_ed_head_l {
+  width: 40%;
+  text-align: left;
+  line-height: 50px;
+  font-size: 20px;
+  color: #6d7993;
+}
+
+.wrapper_ed .box_ed_head_s {
+  width: 10%;
+  text-align: left;
+  line-height: 50px;
+  font-size: 20px;
+  color: #6d7993;
+}
+.wrapper_ed .box_ed_td_l {
+  width: 40%;
+  text-align: left;
+  line-height: 30px;
+  font-size: 18px;
+  color: black;
+}
+
+.wrapper_ed .box_ed_td_s {
+  width: 10%;
+  text-align: left;
+  line-height: 30px;
+  font-size: 18px;
+  color: black;
 }

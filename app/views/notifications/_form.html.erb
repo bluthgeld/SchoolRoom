@@ -1,19 +1,35 @@
 <%= form_for @notification do |n| %>
 <%= n.hidden_field :educator_id, :value => @user.educator.id %>
-<table id="notification_table">
-  <tr>
-    <td><%= n.label "Student Name: " %> </td>
-    <td><%=n.collection_select(:student_id, @user.get_all_students, :id, :full_name, prompt: true)%></td>
-  </tr>
-  <tr>
-    <td><%= n.label "Subject" %></td>
-    <td><%=n.text_field :subject %></td>
-  </tr>
-  <tr>
-    <td><%= n.label "Message"%> </td>
-    <td><%=n.text_area :message, cols: 35, rows: 5 %></td>
-  </tr>
-</table>
+
+<div class="wrapper">
+  <div class="box_l">
+    <%= n.label "Student Name: " %>
+  </div>
+
+  <div class="box_r">
+    <%=n.collection_select(:student_id, @user.get_all_students, :id, :full_name, prompt: true)%>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="box_l">
+    <%= n.label "Subject" %>
+  </div>
+
+  <div class="box_r">
+    <%=n.text_field :subject %>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="box_l">
+    <%= n.label "Message"%>
+  </div>
+
+  <div class="box_r">
+    <%=n.text_area :message, cols: 35, rows: 5 %>
+  </div>
+</div>
 
 <p><%= n.submit %></p>
 <% end %>

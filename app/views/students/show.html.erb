@@ -1,14 +1,56 @@
 <h1><%= @student.full_name %></h1>
 
+<h2>Student Details</h2>
+
+<div class="wrapper">
+  <div class="box_l">
+    Age
+  </div>
+  <div class="box_r">
+    <%= @student.age %>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="box_l">
+    Start Date
+  </div>
+  <div class="box_r">
+    <%= @student.start_date %>
+  </div>
+</div>
+
 <h2>Student Caregivers</h2>
-<% @student.caregivers.each do |caregiver| %>
-<h3><%= link_to caregiver.full_name, caregiver_path(caregiver) %> </h3>
+
+<div class="wrapper_care">
+  <div class="box_care_head_s">
+    No.
+  </div>
+  <div class="box_care_head_l">
+    Name
+  </div>
+  <div class="box_care_head_l">
+    Phone
+  </div>
+  <div class="box_care_head_l">
+    Email
+  </div>
+</div>
+<% @student.caregivers.each_with_index do |caregiver, i| %>
+<div class="wrapper_care">
+  <div class="box_care_td_s">
+    <%= i + 1 %>
+  </div>
+  <div class="box_care_td_l">
+    <%= link_to caregiver.full_name, caregiver_path(caregiver) %>
+  </div>
+  <div class="box_care_td_l">
+    <%= caregiver.phone_number %>
+  </div>
+  <div class="box_care_td_l">
+    <%= caregiver.email %>
+  </div>
+</div>
 <% end %>
 
-<h4>Send Notification</h4>
 
-
-<h3>Here is your <%=cookies["home_page"]%></h3>
-<h3>The last student you visited was <%=cookies["last_student"]%></h3>
-
-<%= link_to "Delete Student", student_path, method: "delete" %>
+<h3><%= link_to "Delete Student", student_path, method: "delete" %></h3>

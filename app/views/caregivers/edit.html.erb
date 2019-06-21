@@ -1,12 +1,47 @@
 <%= form_for @caregiver do |f|%>
-<%= f.label :first_name %>
-<%= f.text_field :first_name%>
-<%= f.label :last_name %>
-<%= f.text_field :last_name %>
-<%= f.label :phone_number %>
-<%= f.text_field :phone_number%></div>
-<%= f.label :email %>
-<%= f.text_field :email %>
-<%= f.label :contact_preference %>
-<%= f.submit %></div>
+<div class="wrapper">
+  <div class="box_l">
+    <%= f.label :first_name %>
+  </div>
+
+  <div class="box_r">
+    <%= f.text_field :first_name%>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="box_l">
+    <%= f.label :last_name %>
+  </div>
+
+  <div class="box_r">
+    <%= f.text_field :last_name%>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="box_l">
+    <%= f.label :phone_number %>
+  </div>
+
+  <div class="box_r">
+    <%= f.text_field :phone_number%>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="box_l">
+    <%= f.label :email %>
+  </div>
+
+  <div class="box_r">
+    <%= f.text_field :email%>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="box_l">
+    <%= f.label :contact_preference %>
+  </div>
+
+  <div class="box_r">
+    <%= f.select :contact_preference, ["phone","email"] %>
+  </div>
+</div>
 <%end%>

@@ -1,3 +1,44 @@
 // Place all the styles related to the Caregivers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+a {
+  color: #6d7993;
+}
+
+.wrapper_care {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 800px;
+}
+
+.wrapper_care .box_care_head_l {
+  width: 40%;
+  text-align: left;
+  line-height: 50px;
+  font-size: 20px;
+  color: #6d7993;
+}
+
+.wrapper_care .box_care_head_s {
+  width: 10%;
+  text-align: left;
+  line-height: 50px;
+  font-size: 20px;
+  color: #6d7993;
+}
+.wrapper_care .box_care_td_l {
+  width: 40%;
+  text-align: left;
+  line-height: 30px;
+  font-size: 18px;
+  color: black;
+}
+
+.wrapper_care .box_care_td_s {
+  width: 10%;
+  text-align: left;
+  line-height: 30px;
+  font-size: 18px;
+  color: black;
+}

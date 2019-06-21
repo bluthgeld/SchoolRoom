@@ -20,14 +20,10 @@ html {
   font-family: tahoma;
 }
 
-html a {
-  color: #6d7993;
-}
 
 h1, h2 {
   color: #6d7993;
 }
-
 
 .form {
   width: 350px;
@@ -37,16 +33,4 @@ h1, h2 {
   border-width: 1px;
   margin-left: 200px;
   padding: 10px;
-}
-
-
-#view_table {
-  width: 800px;
-  border-collapse: collapse;
-}
-
-#view_table th,tr,td   {
-    border: 1px solid black;
-    height: 30px;
-    text-align: left;
 }

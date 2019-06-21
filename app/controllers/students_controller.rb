@@ -30,13 +30,13 @@ class StudentsController < ApplicationController
   def destroy
     @student = find_student
     @student.destroy
-    redirect_to caregivers_path 
+    redirect_to caregivers_path
   end
 
   private
 
   def find_student
-    Student.find_by(params[:id])
+    Student.find(params[:id])
   end
 
   def student_params

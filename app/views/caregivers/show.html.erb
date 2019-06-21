@@ -2,36 +2,104 @@
 
 <h2>My Details</h2>
 
-<h3>Phone Number: <%= @caregiver.phone_number %></h3>
-<h3>Email Address: <%= @caregiver.email %></h3>
-<h3>Communication Preference: <%= @caregiver.contact_preference.capitalize %></h3>
+<div class="wrapper">
+  <div class="box_l">
+    Phone Number
+  </div>
+  <div class="box_r">
+    <%= @caregiver.phone_number %>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="box_l">
+    Email Address
+  </div>
+  <div class="box_r">
+    <%= @caregiver.email %>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="box_l">
+    Comm. Preference
+  </div>
+  <div class="box_r">
+    <%= @caregiver.contact_preference.capitalize %>
+  </div>
+</div>
+
 
 <h2>My Kids</h2>
 
-<table class="view_table">
-  <tr>
-    <th>No.</th>
-    <th>Name</th>
-    <th>Age</th>
-    <th>Start Date</th>
-  </tr>
-<% @caregiver.students.each_with_index do |student, i| %>
-<tr>
-  <td><%= i + 1 %></td>
-  <td><%= link_to student.first_name, student_path(student) %> </td>
-  <td><%= student.age %></td>
-  <td><%= student.start_date %></td>
-</tr>
-  <% end %>
-  </table>
+<div class="wrapper_care">
+  <div class="box_care_head_s">
+    No.
+  </div>
+  <div class="box_care_head_l">
+    Name
+  </div>
+  <div class="box_care_head_s">
+    Age
+  </div>
+  <div class="box_care_head_l">
+    Start Date
+  </div>
+</div>
 
+
+<% @caregiver.students.each_with_index do |student, i| %>
+
+<div class="wrapper_care">
+  <div class="box_care_td_s">
+    <%= i + 1 %>
+  </div>
+  <div class="box_care_td_l">
+    <%= link_to student.first_name, student_path(student) %>
+  </div>
+  <div class="box_care_td_s">
+    <%= student.age %>
+  </div>
+  <div class="box_care_td_l">
+    <%= student.start_date %>
+  </div>
+</div>
+  <% end %>
 
 
 <h2>Notifications</h2>
-<%@caregiver.student_notifications.each do |message|%>
-<div>
-  <%= link_to message.subject, notification_path(message)%>
+
+<div class="wrapper_care">
+  <div class="box_care_head_s">
+    No.
+  </div>
+  <div class="box_care_head_l">
+    From Educator
+  </div>
+  <div class="box_care_head_l">
+    Subject
+  </div>
+  <div class="box_care_head_l">
+    Date Sent:
+  </div>
+
 </div>
+
+<%@caregiver.student_notifications.each_with_index do |message, i|%>
+
+<div class="wrapper_care">
+  <div class="box_care_td_s">
+    <%= i + 1 %>
+  </div>
+  <div class="box_care_td_l">
+    <%= message.educator.full_name %>
+  </div>
+  <div class="box_care_td_l">
+    <%= link_to message.subject, notification_path(message)%>
+  </div>
+  <div class="box_care_td_l">
+    <%= message.created_at %>
+  </div>
+</div>
+
 <%end%>
 
 <h3><%= link_to "Edit Your Caregiver Profile", edit_caregiver_path(@caregiver) %></h3>

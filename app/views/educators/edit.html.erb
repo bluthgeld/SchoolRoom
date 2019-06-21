@@ -1,0 +1,35 @@
+
+  <%= form_for @educator do |f|%>
+  <div class="wrapper">
+    <div class="box_l">
+      <%= f.label :first_name %>
+    </div>
+    <div class="box_r">
+      <%= f.text_field :first_name%>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="box_l">
+      <%= f.label :last_name %>
+    </div>
+    <div class="box_r">
+      <%= f.text_field :last_name%>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="box_l">
+      <%= f.label :email %>
+    </div>
+    <div class="box_r">
+      <%= f.text_field :email%>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="box_l">
+      <%= f.label :phone %>
+    </div>
+    <div class="box_r">
+      <%= f.text_field :phone%>
+    </div>
+  </div>
+<%end%>
