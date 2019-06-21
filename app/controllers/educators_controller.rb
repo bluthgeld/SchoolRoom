@@ -1,6 +1,6 @@
 class EducatorsController < ApplicationController
 
-  before_action :authorized, except: :new
+  before_action :authorized, except: [:new, :create]
   # , only: [:show, :index]
 
   def index
@@ -25,8 +25,10 @@ class EducatorsController < ApplicationController
 
   def create
     @user = User.create(username: params["educator"]["users"]["username"], password: params["educator"]["users"]["password"])
-    @educator = Educator.create(first_name: params["educator"]["first_name"], last_name: params["educator"]["last_name"], email: params["educator"]["email"], phone: params["educator"]["phone"], user_id: @user.id)
+    @educator = Educator.new(first_name: params["educator"]["first_name"], last_name: params["educator"]["last_name"], email: params["educator"]["email"], phone: params["educator"]["phone"], user_id: @user.id)
     @educator.save
+    #@user = User.find_by(id: session[:user_id])
+    session[:user_id] = @user.id
     redirect_to @educator
   end
 
