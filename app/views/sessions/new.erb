@@ -7,12 +7,14 @@
   <div>
     <%= flash.notice%>
   </div>
-  <%end%> 
-
-<%= form_tag '/login' do %>
-  <%=label :username, "Username"%>
-  <%=text_field_tag :username%>
-  <%=label :password, "Password" %>
-  <%=password_field_tag :password %>
-  <%= submit_tag "Login"%>
   <%end%>
+<div class="login">
+  <%= form_tag '/login' do %>
+    <p><%=label :username, "Username"%>
+    <%=text_field_tag :username%></p>
+
+    <p><%=label :password, "Password" %>
+    <%=password_field_tag :password %></p>
+    <%= submit_tag "Login"%>
+    <%end%>
+</div>

@@ -7,7 +7,7 @@
 
 
 <h2>My Students</h2>
-<table width="60%">
+<table class="view_table">
   <tr>
     <th>No.</th>
     <th>Name</th>
@@ -24,26 +24,29 @@
 <% end %>
 </table>
 
-
-<div>My Notifications | </div><div><% if @educator.exists %>
+<div class="notification">My Notifications | <% if @educator.exists %>
   <%= link_to "Create a New Notification", new_notification_path %>
 <% else %>
   <%= "You Must Have Students to Create Notifications" %>
-  <% end %></div>
+  <% end %>
+</div>
 
-<table width="60%">
+<table class="view_table">
   <tr>
     <th>No.</th>
-    <th>Date Sent</th>
     <th>Subject</th>
+    <th>Date Sent</th>
+
   </tr>
   <%@educator.specific_notification_from_educator.each_with_index do |message, i|%>
   <tr>
     <td><%= i + 1 %></td>
-    <td><%= message.created_at %></td>
     <td><%= link_to message.subject, notification_path(message) %></td>
+    <td><%= message.created_at %></td>
   </tr>
 <%end%>
 </table>
 
-<%=link_to "Edit Your Profile", edit_educator_path(@educator)%>
+
+
+<h2><%=link_to "Edit Your Profile", edit_educator_path(@educator)%></h2>

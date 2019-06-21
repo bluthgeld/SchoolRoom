@@ -1,15 +1,31 @@
 <h1><%= @caregiver.full_name %></h1>
 
-<h2>My Kids</h2>
-<% @caregiver.students.each do |student| %>
-<h3><%= link_to student.first_name, student_path(student) %> </h3>
-<% end %>
-
 <h2>My Details</h2>
 
 <h3>Phone Number: <%= @caregiver.phone_number %></h3>
 <h3>Email Address: <%= @caregiver.email %></h3>
 <h3>Communication Preference: <%= @caregiver.contact_preference.capitalize %></h3>
+
+<h2>My Kids</h2>
+
+<table class="view_table">
+  <tr>
+    <th>No.</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Start Date</th>
+  </tr>
+<% @caregiver.students.each_with_index do |student, i| %>
+<tr>
+  <td><%= i + 1 %></td>
+  <td><%= link_to student.first_name, student_path(student) %> </td>
+  <td><%= student.age %></td>
+  <td><%= student.start_date %></td>
+</tr>
+  <% end %>
+  </table>
+
+
 
 <h2>Notifications</h2>
 <%@caregiver.student_notifications.each do |message|%>

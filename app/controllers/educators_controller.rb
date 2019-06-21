@@ -1,6 +1,6 @@
 class EducatorsController < ApplicationController
 
-  before_action :authorized
+  before_action :authorized, except: :new
   # , only: [:show, :index]
 
   def index

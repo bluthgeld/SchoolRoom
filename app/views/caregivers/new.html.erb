@@ -1,26 +1,30 @@
-<h2>Create Username and Password</h2>
+<h1>Create Username Educator Profile</h1>
 
-<div>
+<div class="form">
+
 <%= form_for @caregiver do |f|%>
-<%= f.label :first_name %>
-<%= f.text_field :first_name%>
-<%= f.label :last_name %>
-<%= f.text_field :last_name %>
-<%= f.label :phone_number %>
-<%= f.text_field :phone_number%></div>
-<%= f.label :email %>
-<%= f.text_field :email %>
-<%= f.label :contact_preference %>
-<%= f.select :contact_preference, ["phone","email"] %>
+
+<p><%= f.label :first_name %>
+<%= f.text_field :first_name%></p>
+<p><%= f.label :last_name %>
+<%= f.text_field :last_name %></p>
+<p><%= f.label :phone_number %>
+<%= f.text_field :phone_number%></p>
+<p><%= f.label :email %>
+<%= f.text_field :email %></p>
+<p><%= f.label :contact_preference %>
+<%= f.select :contact_preference, ["phone","email"] %></p>
 
 
 <div>
 <%= f.fields_for :users do |u|%>
-<%= u.label :username %>
-<%= u.text_field :username%>
-<%= u.label :password%>
-<%= u.password_field :password%>
+<p><%= u.label :username %>
+<%= u.text_field :username%></p>
+<p><%= u.label :password%>
+<%= u.password_field :password%></p>
 
 <%end%>
 <%= f.submit %></div>
 <%end%>
+
+</div>
