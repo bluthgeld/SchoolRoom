@@ -19,7 +19,7 @@ class CaregiversController < ApplicationController
 
   def create
     @user = User.create(username: params["caregiver"]["users"]["username"], password: params["caregiver"]["users"]["password"])
-    @caregiver = Caregiver.create(first_name: params["caregiver"]["first_name"], last_name: params["caregiver"]["last_name"], phone_number: params["caregiver"]["phone"], email: params["caregiver"]["email"], contact_preference: params["caregiver"]["contact_preference"], user_id: @user.id)
+    @caregiver = Caregiver.create(first_name: params["caregiver"]["first_name"], last_name: params["caregiver"]["last_name"], phone_number: params["caregiver"]["phone_number"], email: params["caregiver"]["email"], contact_preference: params["caregiver"]["contact_preference"], user_id: @user.id)
     @caregiver.save
     redirect_to @caregiver
   end

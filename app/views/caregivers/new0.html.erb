@@ -1,0 +1,75 @@
+<h1>Create a Caregiver Profile</h1>
+
+<%= form_for @caregiver do |f|%>
+
+<div class="wrapper">
+  <div class="box_l">
+    <%= f.label :first_name %>
+  </div>
+
+  <div class="box_r">
+    <%= f.text_field :first_name%>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="box_l">
+    <%= f.label :last_name %>
+  </div>
+
+  <div class="box_r">
+    <%= f.text_field :last_name%>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="box_l">
+    <%= f.label :phone_number %>
+  </div>
+
+  <div class="box_r">
+    <%= f.text_field :phone_number%>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="box_l">
+    <%= f.label :email %>
+  </div>
+
+  <div class="box_r">
+    <%= f.text_field :email%>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="box_l">
+    <%= f.label :contact_preference %>
+  </div>
+
+  <div class="box_r">
+    <%= f.select :contact_preference, ["phone","email"] %>
+  </div>
+</div>
+
+<%= f.fields_for :users do |u|%>
+<div class="wrapper">
+  <div class="box_l">
+    <%= u.label :username %>
+  </div>
+
+  <div class="box_r">
+    <%= u.text_field :username%>
+  </div>
+</div>
+
+<div class="wrapper">
+  <div class="box_l">
+    <%= u.label :password%>
+  </div>
+
+  <div class="box_r">
+    <%= u.password_field :password%>
+  </div>
+</div>
+
+<%end%>
+<%= f.submit %>
+
+<%end%>
