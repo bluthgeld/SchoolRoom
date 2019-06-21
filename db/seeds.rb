@@ -1,3 +1,4 @@
+require 'faker'
 Student.destroy_all
 User.destroy_all
 Caregiver.destroy_all
@@ -19,6 +20,8 @@ user6 = User.create(username:   'paul'   , password: 'nicholson'  )
 user7 = User.create(username:  'jenny', password: 'ingram'   )
 user8 = User.create(username:  'joseph', password: 'arias'  )
 user9 = User.create(username:   'jason', password: 'liddel'  )
+user10 = User.create(username:   'martin', password: 'porter'  )
+
 
 
 caregiver1 = Caregiver.create(first_name: "Mary", last_name: "Poppins", phone_number: "2132224651", email: "mpoppins@gmail.com", contact_preference: "emails", user_id: user4.id)
@@ -27,6 +30,7 @@ caregiver3 = Caregiver.create(first_name: "Paul", last_name: "Nicholson", phone_
 caregiver4 = Caregiver.create(first_name: "Jenny", last_name: "Ingram", phone_number: "9890232789", email: "catsareawesome@gmail.com", contact_preference: "phone", user_id: user7.id)
 caregiver5 = Caregiver.create(first_name: "Joseph", last_name: "Arias", phone_number: "7146900213", email: "dbziscool@gmail.com", contact_preference: "email", user_id: user8.id)
 caregiver6 = Caregiver.create(first_name: "Jason", last_name: "Lidell", phone_number: "2114678903", email: "jlidell@gmail.com", contact_preference: "phone", user_id: user9.id)
+
 
 educator1 = Educator.create(first_name: "Fred", last_name: "Rogers", email: "fred@neighborhood.org", phone: "3015551212", user_id: user1.id)
 educator3 = Educator.create(first_name: "Heidi", last_name: "Smith", email: "heidi@neighborhood.org", phone: "3015551313", user_id: user2.id)

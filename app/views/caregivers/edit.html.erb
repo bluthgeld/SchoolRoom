@@ -1,3 +1,14 @@
+<nav>
+  <%if get_user%>
+      Hello, <%=get_user.username.titleize%>!
+  <%= link_to "Logout", "/logout", method: "DELETE" %>
+  <%= link_to "Profile", caregiver_path(@user.caregiver.id)%>
+  <%else%>
+  <%= link_to "Login", login_path%>
+  <%end%>
+</nav>
+
+
 <%= form_for @caregiver do |f|%>
 <div class="wrapper">
   <div class="box_l">

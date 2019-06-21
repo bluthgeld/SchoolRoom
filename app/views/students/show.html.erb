@@ -1,3 +1,13 @@
+<nav>
+  <%if get_user%>
+      Hello, <%=get_user.username.titleize%>!
+  <%= link_to "Logout", "/logout", method: "DELETE" %>
+  
+  <%else%>
+  <%= link_to "Login", login_path%>
+  <%end%>
+</nav>
+
 <h1><%= @student.full_name %></h1>
 
 <h2>Student Details</h2>
@@ -41,7 +51,7 @@
     <%= i + 1 %>
   </div>
   <div class="box_care_td_l">
-    <%= link_to caregiver.full_name, caregiver_path(caregiver) %>
+    <%= caregiver.full_name %>
   </div>
   <div class="box_care_td_l">
     <%= caregiver.phone_number %>
@@ -51,6 +61,3 @@
   </div>
 </div>
 <% end %>
-
-
-<h3><%= link_to "Delete Student", student_path, method: "delete" %></h3>

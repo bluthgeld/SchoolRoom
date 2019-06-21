@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_one :caregiver
   has_one :educator
+  validates :username, presence: true, uniqueness: true
+  validates :password_digest, presence: true
   has_secure_password
 
 

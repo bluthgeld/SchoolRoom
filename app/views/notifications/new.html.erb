@@ -1,3 +1,21 @@
+<nav>
+  <%if get_user%>
+      Hello, <%=get_user.username.titleize%>!
+  <%= link_to "Logout", "/logout", method: "DELETE" %>
+    <%= link_to "Profile", educator_path(@user.educator.id)%>
+  <%else%>
+  <%= link_to "Login", login_path%>
+  <%end%>
+</nav>
+
 <h1>New Notification</h1>
+
+<%if @notification.errors%>
+<%@notification.errors.full_messages.each do |message|%>
+  <div class="error">
+    <%=message%>
+  </div>
+  <%end%>
+  <%end%>
 
 <%= render "form" %>

@@ -12,6 +12,7 @@ class Educator < ApplicationRecord
   validates :last_name, presence: true
   validates :phone, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
+  
 
 
   def full_name

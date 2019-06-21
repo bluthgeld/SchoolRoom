@@ -1,5 +1,13 @@
 <h1>Create a Caregiver Profile</h1>
 
+<%if @caregiver.errors%>
+  <%@caregiver.errors.full_messages.each do |message|%>
+    <div class="error">
+      <%=message%>
+    </div>
+  <%end%>
+<%end%>
+
 <%= form_for @caregiver do |f|%>
 
 <div class="wrapper">

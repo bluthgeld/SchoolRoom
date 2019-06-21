@@ -1,3 +1,12 @@
+<nav>
+  <%if get_user%>
+      Hello, <%=get_user.username.titleize%>!
+  <%= link_to "Logout", "/logout", method: "DELETE" %>
+  <%else%>
+  <%= link_to "Login", login_path%>
+  <%end%>
+</nav>
+
 <h1>Educators</h1>
 
 <% @educators.each do |educator| %>

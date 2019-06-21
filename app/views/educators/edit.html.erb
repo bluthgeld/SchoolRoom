@@ -1,3 +1,11 @@
+<nav>
+  <%if get_user%>
+      Hello, <%=get_user.username.titleize%>!
+  <%= link_to "Logout", "/logout", method: "DELETE" %>
+  <%else%>
+  <%= link_to "Login", login_path%>
+  <%end%>
+</nav>
 
   <%= form_for @educator do |f|%>
   <div class="wrapper">
